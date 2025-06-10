@@ -77,9 +77,10 @@ const AudioApi = () => {
   }
 
   return (
-    <div>
-      <button onClick={isPlaying ? handlePause : handlePlay}>
-        {isPlaying ? '⏸ 停止' : '▶ 再生'}
+    <div className='flex flex-col items-center justify-center'>
+      <div className='w-50 md:min-w-80 h-50 md:min-h-80 bg-gray-900'></div>
+      <button className='rotate-90' onClick={isPlaying ? handlePause : handlePlay}>
+        {isPlaying ? '〓' : '▲'}
       </button>
       <input
         type="range"
@@ -91,7 +92,6 @@ const AudioApi = () => {
         style={{ width: '100%' }}
       />
       <span>
-        {currentTime.toFixed(1)} / {duration.toFixed(1)} 秒
       </span>
       <h1>Endless Dance.mp3</h1>
     </div>
